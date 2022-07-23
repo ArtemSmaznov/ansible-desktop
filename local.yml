@@ -1,0 +1,26 @@
+---
+
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: Install Tools
+    package:
+      name:
+      - vim
+      - exa
+      - man
+      - bat
+      - ripgrep
+      - mlocate
+      - bash-completion
+      - neofetch
+
+  - name: Install Networking
+    package:
+      name:
+        - openssh
+        - git
+        - gh
+        - wol
